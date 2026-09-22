@@ -8,8 +8,9 @@ public class Frigate extends Ship {
     private static final String NAME = "Fragata";
 
     /**
-     * @param bearing
-     * @param pos
+     * @param bearing the bearing where the Frigate heads to
+     * @param pos     initial point for positioning the Frigate
+     * @exception IllegalArgumentException if the bearing is invalid
      */
     public Frigate(Compass bearing, IPosition pos) throws IllegalArgumentException {
         super(Frigate.NAME, bearing, pos);
@@ -25,14 +26,14 @@ public class Frigate extends Ship {
                     getPositions().add(new Position(pos.getRow(), pos.getColumn() + c));
                 break;
             default:
-                throw new IllegalArgumentException("ERROR! invalid bearing for thr frigate");
+                throw new IllegalArgumentException("ERROR! invalid bearing for the frigate");
         }
     }
 
     /*
-     * (non-Javadoc)
+     * @return the size of the Frigate ship. The size is set to 4.
      *
-     * @see battleship.Ship#getSize()
+     * 
      */
     @Override
     public Integer getSize() {
