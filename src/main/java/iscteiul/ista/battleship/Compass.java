@@ -9,18 +9,23 @@ package iscteiul.ista.battleship;
 public enum Compass {
     NORTH('n'), SOUTH('s'), EAST('e'), WEST('o'), UNKNOWN('u');
 
-    private final char c;
+    /*
+    we are going to define the directions of the compass (NORTH, SOUTH, EAST, WEST, UNKNOWN) 
+    and their corresponding characters
+    */
+
+    private final char c; /* here is where the character for each compass direction is defined */
 
     Compass(char c) {
         this.c = c;
     }
 
-    public char getDirection() {
+    public char getDirection() { 
         return c;
     }
 
     @Override
-    public String toString() {
+    public String toString() { /* here we are going to define the string representation of each compass direction */
         return "" + c;
     }
 
@@ -28,21 +33,21 @@ public enum Compass {
         Compass bearing;
         switch (ch) {
             case 'n':
-                bearing = NORTH;
+                bearing = NORTH; /* this is the north direction */
                 break;
             case 's':
-                bearing = SOUTH;
+                bearing = SOUTH; /* this is the south direction */
                 break;
             case 'e':
-                bearing = EAST;
+                bearing = EAST; /* this is the east direction */
                 break;
             case 'o':
-                bearing = WEST;
+                bearing = WEST; /* this is the west direction */
                 break;
             default:
-                bearing = UNKNOWN;
+                bearing = UNKNOWN; /* this is the unknown direction */
         }
 
-        return bearing;
+        return bearing; /* return the compass direction corresponding to the character */
     }
 }
