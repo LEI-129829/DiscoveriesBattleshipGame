@@ -17,8 +17,8 @@ public class Caravel extends Ship {
     /**
      * @param bearing the bearing where the Caravel heads to
      * @param pos     initial point for positioning the Caravel
-     * @throws NullPointerException     if the bearing is null
-     * @throws IllegalArgumentException if the bearing is invalid
+     * @exception NullPointerException if the bearing is null
+     * @exception IllegalArgumentException if the bearing is invalid
      */
     public Caravel(Compass bearing, IPosition pos) throws NullPointerException, IllegalArgumentException {
         super(Caravel.NAME, bearing, pos);
@@ -43,8 +43,8 @@ public class Caravel extends Ship {
 
     }
 
-    /*
-     * Returns the size of the Caravel ship as an Integer. The size is defined as 2.
+    /**    
+     * @return the size of the Caravel ship. The size is set to 2.
      * 
      */
     @Override
@@ -53,4 +53,3 @@ public class Caravel extends Ship {
     }
 
 }
-
