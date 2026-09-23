@@ -1,5 +1,5 @@
 /**
- *
+ * Represents the main game class for the Battleship game.
  */
 package iscteiul.ista.battleship;
 
@@ -30,10 +30,9 @@ public class Game implements IGame {
         this.fleet = fleet;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IGame#fire(battleship.IPosition)
+    /**    
+     * @param pos the position where the shot is fired
+     * 
      */
     @Override
     public IShip fire(IPosition pos) {
@@ -58,60 +57,55 @@ public class Game implements IGame {
         return null;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IGame#getShots()
+    /**    
+     * Returns the list of all shots fired in the game
+     * 
      */
     @Override
     public List<IPosition> getShots() {
         return shots;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IGame#getRepeatedShots()
-     */
+   /**  
+    * Returns the number of repeated shots fired in the game
+    * 
+    */
     @Override
     public int getRepeatedShots() {
         return this.countRepeatedShots;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IGame#getInvalidShots()
+    /**    
+     * Returns the number of invalid shots fired in the game
+     * 
      */
     @Override
     public int getInvalidShots() {
         return this.countInvalidShots;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IGame#getHits()
+    /**    
+     * Returns the number of hits fired in the game
+     * 
      */
     @Override
     public int getHits() {
         return this.countHits;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IGame#getSunkShips()
+    /**    
+     * Returns the number of sunk ships in the game
+     * 
+     * 
      */
     @Override
     public int getSunkShips() {
         return this.countSinks;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IGame#getRemainingShips()
+    /**    
+     * Returns the number of remaining ships in the game
+     * 
      */
     @Override
     public int getRemainingShips() {
