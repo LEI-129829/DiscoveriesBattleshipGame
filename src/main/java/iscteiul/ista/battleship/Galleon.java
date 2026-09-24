@@ -3,26 +3,31 @@
  */
 package iscteiul.ista.battleship;
 
+/**
+ * This class represents a Galleon ship in the Battleship game.
+ * It extends the Ship class and defines the specific characteristics of a Galleon, including its size and name.
+ * The constructor initializes the Galleon's position based on its bearing and starting position.
+ * 
+ */
+
 public class Galleon extends Ship {
     private static final Integer SIZE = 5;
     private static final String NAME = "Galeao";
     
-    /*
-    Where the size and name of the galleon are defined (constructor)
-    */
+
 
     /**
-     * @param bearing
-     * @param pos
+     * @param bearing the bearing where the Galleon heads to
+     * @param pos    initial point for positioning the Galleon
+     * @exception IllegalArgumentException if the bearing is invalid
+     * 
      */
     public Galleon(Compass bearing, IPosition pos) throws IllegalArgumentException {
-        super(Galleon.NAME, bearing, pos); /* where the galleon is initialized with its name, bearing, 
-                                              and position with the super constructor */
+        super(Galleon.NAME, bearing, pos);
 
         if (bearing == null)
             throw new NullPointerException("ERROR! invalid bearing for the galleon");
 
-        /* where the positions of the galleon are filled based on its bearing */
 
         switch (bearing) {
             case NORTH:
@@ -38,26 +43,26 @@ public class Galleon extends Ship {
                 fillWest(pos);
                 break;
 
-                /* here we are filling the positions based on the bearing */
 
             default:
                 throw new IllegalArgumentException("ERROR! invalid bearing for the galleon"); 
-                /* 
-                An exception is thrown if the bearing is invalid
-                */
+                
         }
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.Ship#getSize()
+    /**    
+     * 
+     * @return the size of the Galleon ship. The size is set to 5.
      */
     @Override
     public Integer getSize() {
         return Galleon.SIZE;
-        /* return the galleon´s size */
     }
+
+    /**
+     * 
+     * @param pos the initial position for the Galleon when facing north
+     */
 
     private void fillNorth(IPosition pos) { /* fill the positions for the galleon facing north */
         for (int i = 0; i < 3; i++) {
@@ -68,7 +73,12 @@ public class Galleon extends Ship {
 
     }
 
-    private void fillSouth(IPosition pos) { /* fill the positions for the galleon facing south */
+    /**
+     * 
+     * @param pos the initial position for the Galleon when facing south
+     */
+
+    private void fillSouth(IPosition pos) {
         for (int i = 0; i < 2; i++) {
             getPositions().add(new Position(pos.getRow() + i, pos.getColumn()));
         }
@@ -77,7 +87,12 @@ public class Galleon extends Ship {
         }
     }
 
-    private void fillEast(IPosition pos) { /* fill the positions for the galleon facing east*/
+    /**
+     * 
+     * @param pos the initial position for the Galleon when facing east
+     */
+
+    private void fillEast(IPosition pos) {
         getPositions().add(new Position(pos.getRow(), pos.getColumn()));
         for (int i = 1; i < 4; i++) {
             getPositions().add(new Position(pos.getRow() + 1, pos.getColumn() + i - 3));
@@ -85,7 +100,12 @@ public class Galleon extends Ship {
         getPositions().add(new Position(pos.getRow() + 2, pos.getColumn()));
     }
 
-    private void fillWest(IPosition pos) { /* fill the positions for the galleon facing west */
+    /**
+     * 
+     * @param pos the initial position for the Galleon when facing west
+     */
+
+    private void fillWest(IPosition pos) { 
         getPositions().add(new Position(pos.getRow(), pos.getColumn()));
         for (int i = 1; i < 4; i++) {
             getPositions().add(new Position(pos.getRow() + 1, pos.getColumn() + i - 1));

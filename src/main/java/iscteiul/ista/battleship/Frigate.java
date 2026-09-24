@@ -3,6 +3,13 @@
  */
 package iscteiul.ista.battleship;
 
+/**
+ * This class represents a Frigate ship in the Battleship game.
+ * It extends the Ship class and defines the specific characteristics of a Frigate, including its size and name.
+ * The constructor initializes the Frigate's position based on its bearing and starting position.
+ * 
+ */
+
 public class Frigate extends Ship {
     private static final Integer SIZE = 4;
     private static final String NAME = "Fragata";
@@ -30,10 +37,9 @@ public class Frigate extends Ship {
         }
     }
 
-    /*
+    /**
      * @return the size of the Frigate ship. The size is set to 4.
      *
-     * 
      */
     @Override
     public Integer getSize() {
