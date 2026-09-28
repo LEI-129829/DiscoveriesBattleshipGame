@@ -3,27 +3,19 @@
  */
 package iscteiul.ista.battleship;
 
-/**
- * 
- * this ship occupies only one position in the board and can be placed in any direction
- */
 
+/**
+ * This class represents a Barge ship in the Battleship game. 
+ * It extends the Ship class and defines the specific characteristics of a Barge, including its size and name. 
+ * The constructor initializes the Barge's position based on its bearing and starting position.
+ *
+ */
 
 public class Barge extends Ship {
 
-    /*
-    here we are going to define the size and name of the barge (constructor)
-    */
-
     private static final Integer SIZE = 1;
-    /*
-    this line shows the size of the barge
-    */
-
+    
     private static final String NAME = "Barca";
-    /*
-    this line shows the name of the barge (Barca)   
-    */
 
     /**
      * @param bearing - barge bearing
@@ -34,27 +26,21 @@ public class Barge extends Ship {
 
         super(Barge.NAME, bearing, pos);
 
-         /*
-        in here we are going to call the constructor of the super class (Ship) and pass the name, direction and position of the barge
-        */
 
         getPositions().add(new Position(pos.getRow(), pos.getColumn()));
 
-        /*
-        getPositions() method is used to get the positions of the barge and add the position of the barge to the list of positions
-        */
 
 
     }
 
+/**    
+     * @return the size of the barge ship. The size is set to 1.
+     * 
+     */
+
     @Override
     public Integer getSize() {
         return SIZE;
-
-    /*
-    this method is for the size of the barge
-    */
-
     }
 
 }

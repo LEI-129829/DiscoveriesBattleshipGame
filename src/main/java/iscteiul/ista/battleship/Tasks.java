@@ -5,9 +5,17 @@ package iscteiul.ista.battleship;
 
 import java.util.Scanner;
 
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+
+/**
+ * 
+ * This class contains various tasks that can be executed in the Battleship game.
+ * It provides methods for building fleets, reading ship data, firing rounds of shots, and handling user commands. 
+ * The tasks are designed to test different aspects of the game, including ship creation, fleet management, and gameplay mechanics.
+ * 
+ */
 
 public class Tasks {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -16,9 +24,7 @@ public class Tasks {
 
     private static final String GOODBYE_MESSAGE = "Bons ventos!";
 
-    /**
-     * Strings to be used by the user
-     */
+
     private static final String NOVAFROTA = "nova";
     private static final String DESISTIR = "desisto";
     private static final String RAJADA = "rajada";
@@ -26,18 +32,6 @@ public class Tasks {
     private static final String BATOTA = "mapa";
     private static final String STATUS = "estado";
 
-
-    /////////////////////////////////////////////////////////////////////////////
-    // hereafter one may find some code that can be converted to automatic tests,
-    // as long as appropriate changes are made. It also shows that we should
-    // develop our code incrementally e.g. first the ships, then the fleet,
-    // then some rule checking, then dealing with firing and so on
-    /////////////////////////////////////////////////////////////////////////////
-
-    /**
-     * This task tests the building up of ships: For each ship, reads positions and
-     * indicates whether the ship occupies each one of such positions or not
-     */
     public static void taskA() {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {
@@ -50,9 +44,6 @@ public class Tasks {
         }
     }
 
-    /**
-     * This task tests the building up of fleets
-     */
     public static void taskB() {
         Scanner in = new Scanner(System.in);
         IFleet fleet = null;
@@ -69,16 +60,12 @@ public class Tasks {
                 default:
                     LOGGER.info("Que comando é esse??? Repete lá ...");
             }
-            // The other commands are unknown in this task
             command = in.next();
         }
         LOGGER.info(GOODBYE_MESSAGE);
     }
 
-    /**
-     * This task tests the building up of fleets and takes into consideration the
-     * possibility of cheating
-     */
+
     public static void taskC() {
         Scanner in = new Scanner(System.in);
         IFleet fleet = null;
@@ -98,15 +85,12 @@ public class Tasks {
                 default:
                     LOGGER.info("Que comando é esse??? Repete lá ...");
             }
-            // The other commands are unknown in this task
             command = in.next();
         }
         LOGGER.info(GOODBYE_MESSAGE);
     }
 
-    /**
-     * This task also tests the fighting element of a round of three shots
-     */
+
     public static void taskD() {
 
         Scanner in = new Scanner(System.in);
@@ -150,7 +134,6 @@ public class Tasks {
     }
 
     /**
-     * This operation allows the build up of a fleet, given user data
      *
      * @param in The scanner to read from
      * @return The fleet that has been built
@@ -178,7 +161,6 @@ public class Tasks {
     }
 
     /**
-     * This operation reads data about a ship, build it and returns it
      *
      * @param in The scanner to read from
      * @return The created ship based on the data that has been read
@@ -192,7 +174,6 @@ public class Tasks {
     }
 
     /**
-     * This operation allows reading a position in the map
      *
      * @param in The scanner to read from
      * @return The position that has been read
@@ -204,8 +185,6 @@ public class Tasks {
     }
 
     /**
-     * This operation allows firing a round of shots (three) over a fleet, in the
-     * context of a game
      *
      * @param in   The scanner to read from
      * @param game The context game while fleet is being attacked
