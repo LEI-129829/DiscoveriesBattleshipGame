@@ -1,12 +1,15 @@
-/**
- *
- */
+
 package iscteiul.ista.battleship;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
+/**
+ * This class represents a ship in the Battleship game.
+ *  It provides methods to get the ship's category, bearing, position, and size, as well as methods to check if 
+ * the ship is still floating, if it occupies a given position, and if it is too close to another ship or position. 
+ * It also provides a method to shoot at a given position and a string representation of the ship.
+ */
 public abstract class Ship implements IShip {
 
     private static final String GALEAO = "galeao";
