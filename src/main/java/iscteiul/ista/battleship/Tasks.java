@@ -9,13 +9,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
-/**
- * 
- * This class contains various tasks that can be executed in the Battleship game.
- * It provides methods for building fleets, reading ship data, firing rounds of shots, and handling user commands. 
- * The tasks are designed to test different aspects of the game, including ship creation, fleet management, and gameplay mechanics.
- * 
- */
 
 public class Tasks {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -133,11 +126,7 @@ public class Tasks {
         LOGGER.info(GOODBYE_MESSAGE);
     }
 
-    /**
-     *
-     * @param in The scanner to read from
-     * @return The fleet that has been built
-     */
+    
     static Fleet buildFleet(Scanner in) {
         assert in != null;
 
@@ -160,11 +149,7 @@ public class Tasks {
         return fleet;
     }
 
-    /**
-     *
-     * @param in The scanner to read from
-     * @return The created ship based on the data that has been read
-     */
+    
     static Ship readShip(Scanner in) {
         String shipKind = in.next();
         Position pos = readPosition(in);
@@ -173,22 +158,14 @@ public class Tasks {
         return Ship.buildShip(shipKind, bearing, pos);
     }
 
-    /**
-     *
-     * @param in The scanner to read from
-     * @return The position that has been read
-     */
+    
     static Position readPosition(Scanner in) {
         int row = in.nextInt();
         int column = in.nextInt();
         return new Position(row, column);
     }
 
-    /**
-     *
-     * @param in   The scanner to read from
-     * @param game The context game while fleet is being attacked
-     */
+    
     static void firingRound(Scanner in, IGame game) {
         for (int i = 0; i < NUMBER_SHOTS; i++) {
             IPosition pos = readPosition(in);
