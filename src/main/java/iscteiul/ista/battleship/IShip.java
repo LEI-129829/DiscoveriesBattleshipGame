@@ -42,7 +42,6 @@ public interface IShip {
 
     boolean tooCloseTo(IShip other);
 
-    
 
     boolean tooCloseTo(IPosition pos);
 

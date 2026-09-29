@@ -48,7 +48,6 @@ public class Position implements IPosition {
     }
 
 
-    
     /**   
      * 
      * @return the hash code of the position, based on its row, column, isHit, and isOccupied attributes
