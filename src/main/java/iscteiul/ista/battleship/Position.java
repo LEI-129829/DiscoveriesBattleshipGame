@@ -5,15 +5,21 @@ package iscteiul.ista.battleship;
 
 import java.util.Objects;
 
+/**
+ * 
+ * This class represents a position on the Battleship game board. 
+ * It implements the IPosition interface and provides methods to retrieve the row and column of the position,
+ * check if it is occupied or hit, and determine if it is adjacent to another position. 
+ * The class also includes methods to occupy the position and mark it as hit.
+ */
+
 public class Position implements IPosition {
     private int row;
     private int column;
     private boolean isOccupied;
     private boolean isHit;
 
-    /**
-     *
-     */
+ 
     public Position(int row, int column) {
         this.row = row;
         this.column = column;
@@ -21,37 +27,44 @@ public class Position implements IPosition {
         this.isHit = false;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#getRow()
-     */
+     /** 
+      * 
+      * @return the row of the position
+      */
+
     @Override
     public int getRow() {
         return row;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#getColumn()
+    /**    
+     * 
+     * @return the column of the position
      */
+
     @Override
     public int getColumn() {
         return column;
     }
 
 
+    
+    /**   
+     * 
+     * @return the hash code of the position, based on its row, column, isHit, and isOccupied attributes
+     */
+
     @Override
     public int hashCode() {
         return Objects.hash(column, isHit, isOccupied, row);
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#equals(java.lang.Object)
+    /**    
+     * 
+     * @param otherPosition the other position to compare with
+     * @return true if the positions are equal (same row and column), false otherwise
      */
+
     @Override
     public boolean equals(Object otherPosition) {
         if (this == otherPosition)
@@ -64,55 +77,65 @@ public class Position implements IPosition {
         }
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#isAdjacentTo(battleship.IPosition)
+    /**    
+     * 
+     * 
+     * @param other the other position to check adjacency with
+     * @return true if the positions are adjacent (within one row and one column), false otherwise
      */
+    
+
     @Override
     public boolean isAdjacentTo(IPosition other) {
         return (Math.abs(this.getRow() - other.getRow()) <= 1 && Math.abs(this.getColumn() - other.getColumn()) <= 1);
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#occupy()
+    /**   
+     * 
+     * @return true if the position is occupied, false otherwise
      */
+
     @Override
     public void occupy() {
         isOccupied = true;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#shoot()
+    /**    
+     * 
+     * @return true if the position is hit, false otherwise
      */
+
     @Override
     public void shoot() {
         isHit = true;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#isOccupied()
+    
+    /**    
+     * 
+     * @return true if the position is occupied, false otherwise
      */
     @Override
     public boolean isOccupied() {
         return isOccupied;
     }
 
-    /*
-     * (non-Javadoc)
-     *
-     * @see battleship.IPosition#isHit()
+
+    /**   
+     * 
+     * @return true if the position is hit, false otherwise
      */
+
     @Override
     public boolean isHit() {
         return isHit;
     }
+
+
+    /**    
+     * 
+     * @return a string representation of the position, including its row and column
+     */
 
     @Override
     public String toString() {
