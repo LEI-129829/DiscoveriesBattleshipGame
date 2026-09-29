@@ -13,10 +13,7 @@ Basic academic version of Battleship game to build upon.
 | Engenharia Informática | 129841 |  Manuel Lopes   |
 | Engenharia Informática | 129849 |  Duarte Pereira |
 | Engenharia Informática | 129870 |  Vasco Guedes   |
-| Engenharia Informática | 129829 |  Rodrigo Cruz  |
-| Engenharia Informática | 129841 |  Manuel Lopes  |
-| Engenharia Informática | 129849 |  Duarte Pereira |
-| Engenharia Informática | 129870 |  Vasco Guedes  |
+
 
 | Batalha Naval | Descobrimentos | English | Dimensão | #Navios |
 | :--- | :--- | :--- | :---: | :---: |
