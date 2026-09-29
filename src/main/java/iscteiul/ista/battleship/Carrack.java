@@ -1,6 +1,3 @@
-/**
- * Package containing classes for the Battleship game implementation.
- */
 package iscteiul.ista.battleship;
 
 /**
@@ -15,7 +12,6 @@ public class Carrack extends Ship {
     private static final String NAME = "Nau";
 
     /**
-     * Constructs a Carrack ship at a specific position with a given bearing orientation.
      * 
      * @param bearing the compass direction the ship is facing (NORTH, SOUTH, EAST, WEST)
      * @param pos     the starting coordinate position on the grid
@@ -43,7 +39,6 @@ public class Carrack extends Ship {
     }
 
     /**
-     * Returns the size of the Carrack ship.
      * 
      * @return an Integer representing the ship's grid length (3)
      */
