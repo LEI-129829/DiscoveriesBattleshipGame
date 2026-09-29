@@ -8,7 +8,12 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
+/**
+ * this class implements the tasks of the Battleship game. 
+ * It provides methods to read ships and positions from input, build fleets, and execute firing rounds. 
+ * It also handles user commands for creating fleets, checking status, and firing at ships.
+ * 
+ */
 
 public class Tasks {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -126,7 +131,11 @@ public class Tasks {
         LOGGER.info(GOODBYE_MESSAGE);
     }
 
-    
+    /**
+     * Builds a fleet of ships from user input.
+     * @param in the scanner to read input from
+     * @return the built fleet
+     */
     static Fleet buildFleet(Scanner in) {
         assert in != null;
 
@@ -149,7 +158,11 @@ public class Tasks {
         return fleet;
     }
 
-    
+    /**
+     * Reads a ship from user input.
+     * @param in the scanner to read input from
+     * @return the read ship or null if the ship kind is unknown
+     */
     static Ship readShip(Scanner in) {
         String shipKind = in.next();
         Position pos = readPosition(in);
@@ -158,7 +171,11 @@ public class Tasks {
         return Ship.buildShip(shipKind, bearing, pos);
     }
 
-    
+    /**
+     * Reads a position from user input.
+     * @param in the scanner to read input from
+     * @return the read position
+     */
     static Position readPosition(Scanner in) {
         int row = in.nextInt();
         int column = in.nextInt();
