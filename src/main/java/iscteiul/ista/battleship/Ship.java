@@ -1,4 +1,3 @@
-
 package iscteiul.ista.battleship;
 
 import java.util.ArrayList;
@@ -18,7 +17,14 @@ public abstract class Ship implements IShip {
     private static final String CARAVELA = "caravela";
     private static final String BARCA = "barca";
 
-    
+    /**
+     * 
+     * @param shipKind string representing the kind of ship to be built (e.g., "galeao", "fragata", "nau", "caravela", "barca")
+     * @param bearing the bearing of the ship (e.g., NORTH, EAST, SOUTH, WEST)
+     * @param pos the position of the ship on the game board
+     * @return a new instance of a Ship subclass based on the provided shipKind, bearing, and position
+     */
+
     static Ship buildShip(String shipKind, Compass bearing, Position pos) {
         Ship s;
         switch (shipKind) {
@@ -50,7 +56,13 @@ public abstract class Ship implements IShip {
     protected List<IPosition> positions;
 
 
-    
+    /**
+     * Constructs a new Ship with the specified category, bearing, and position.
+     * @param category the category of the ship (e.g., "galeao", "fragata", "nau", "caravela", "barca")
+     * @param bearing the bearing of the ship (e.g., NORTH, EAST, SOUTH, WEST)
+     * @param pos the position of the ship on the game board
+     */
+
     public Ship(String category, Compass bearing, IPosition pos) {
         assert bearing != null;
         assert pos != null;
@@ -61,29 +73,49 @@ public abstract class Ship implements IShip {
         positions = new ArrayList<>();
     }
 
+    /**    
+     * 
+     * @return the category of the ship
+     */
     
     @Override
     public String getCategory() {
         return category;
     }
 
-    
+    /**   
+     * 
+     * @return the size of the ship (number of positions it occupies)
+     */
+
     public List<IPosition> getPositions() {
         return positions;
     }
 
-    
+    /**    
+     * 
+     * @return the size of the ship (number of positions it occupies)
+     */
+
     @Override
     public IPosition getPosition() {
         return pos;
     }
 
+    /**   
+     * 
+     * @return the size of the ship (number of positions it occupies)
+     */
     
     @Override
     public Compass getBearing() {
         return bearing;
     }
 
+    /**   
+     * 
+     * @return true if the ship is still floating (not all positions are hit), false otherwise
+     */
     
     @Override
     public boolean stillFloating() {
@@ -93,6 +125,10 @@ public abstract class Ship implements IShip {
         return false;
     }
 
+    /**    
+     * 
+     * @return the topmost row index occupied by the ship
+     */
     
     @Override
     public int getTopMostPos() {
@@ -103,6 +139,11 @@ public abstract class Ship implements IShip {
         return top;
     }
 
+
+    /**   
+     * 
+     * @return the bottommost row index occupied by the ship
+     */
     
     @Override
     public int getBottomMostPos() {
@@ -113,7 +154,11 @@ public abstract class Ship implements IShip {
         return bottom;
     }
 
-    
+    /**    
+     * 
+     * @return the leftmost column index occupied by the ship
+     */
+
     @Override
     public int getLeftMostPos() {
         int left = getPositions().get(0).getColumn();
@@ -123,6 +168,10 @@ public abstract class Ship implements IShip {
         return left;
     }
 
+    /**    
+     * 
+     * @return the rightmost column index occupied by the ship
+     */
     
     @Override
     public int getRightMostPos() {
@@ -133,6 +182,11 @@ public abstract class Ship implements IShip {
         return right;
     }
 
+    /**    
+     * 
+     * @param pos the position to check if the ship occupies
+     * @return true if the ship occupies the specified position, false otherwise
+     */
     
     @Override
     public boolean occupies(IPosition pos) {
@@ -144,6 +198,11 @@ public abstract class Ship implements IShip {
         return false;
     }
 
+    /**    
+     * 
+     * @param other the other ship to check if this ship is too close to
+     * @return true if this ship is too close to the other ship, false otherwise
+     */
     
     @Override
     public boolean tooCloseTo(IShip other) {
@@ -157,7 +216,12 @@ public abstract class Ship implements IShip {
         return false;
     }
 
-    
+    /**    
+     * 
+     * @param pos the position to check if this ship is too close to
+     * @return true if this ship is too close to the specified position, false otherwise
+     */
+
     @Override
     public boolean tooCloseTo(IPosition pos) {
         for (int i = 0; i < this.getSize(); i++)
@@ -167,6 +231,10 @@ public abstract class Ship implements IShip {
     }
 
 
+    /**    
+     * 
+     * @param pos the position to shoot at
+     */
     
     @Override
     public void shoot(IPosition pos) {
@@ -178,7 +246,10 @@ public abstract class Ship implements IShip {
         }
     }
 
-    
+    /**    
+     * 
+     * @return a string representation of the ship, including its category, bearing, and position
+     */
 
     @Override
     public String toString() {
